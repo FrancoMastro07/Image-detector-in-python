@@ -15,3 +15,21 @@ testing_data = testing_data.map(normalize)
 
 training_data = training_data.cache()
 testing_data = testing_data.cache()
+
+model = tf.keras.Sequential({
+    
+  tf.keras.layers.Conv2D(32, (3,3), input_shape=(28, 28, 1), activation="relu"),
+  tf.keras.layers.Dropout(0.5),
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(units=100, activation="relu"),
+  tf.keras.layers.Dense(units=10, activation="softmax")
+
+})
+
+model.compile(
+    
+  optimizer="adam",
+  loss=tf.keras.losses.SparseCategoricalCrossentropy(),
+  metrics=["accuracy"]
+
+)
