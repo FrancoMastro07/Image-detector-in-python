@@ -1,1 +1,1 @@
-This is an image detector using convolutional networks with tensorflow and his dataset called fashion_mnist. 
+This is an simple image detector using neuronal networks with tensorflow and his dataset called fashion_mnist. 

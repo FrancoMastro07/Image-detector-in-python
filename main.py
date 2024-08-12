@@ -33,3 +33,10 @@ model.compile(
   metrics=["accuracy"]
 
 )
+
+BATCH_SIZE = 32
+
+training_data = training_data.repeat().shuffle(metadata.splits["train"].num_examples).batch(BATCH_SIZE)
+testing_data = testing_data.batch(BATCH_SIZE)
+
+historical = model.fit(training_data, epochs=5)
