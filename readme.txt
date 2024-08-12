@@ -1,0 +1,1 @@
+This is an image detector using convolutional networks with tensorflow and his dataset called fashion_mnist. 
